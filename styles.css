@@ -1,4 +1,4 @@
-    
+
 /* Base styles for the entire page */
 body, html {
     margin: 0;
@@ -93,7 +93,8 @@ body {
     }
 
     .ascii-art {
-        font-size: 8px; /* Smaller ASCII art on mobile */
+        font-size: min(2.4vw, 12px); /* Scales with screen width so the name always fits */
+        padding-left: 8px; /* The 100px desktop gap would push the name off-screen */
     }
 
     body {
