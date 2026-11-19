@@ -66,6 +66,18 @@ ul li::before {
     white-space: pre-wrap; /* Wrap long lines */
 }
 
+/* Bullet lists inside job entries: wrapped lines align under the text */
+.job-bullets {
+    white-space: normal;
+    margin: 0;
+    padding-left: 0;
+}
+
+.job-bullets li {
+    padding-left: 2ch;
+    text-indent: -2ch;
+}
+
 .project-description p {
     white-space: pre-wrap;
 }
@@ -107,6 +119,10 @@ body {
     margin-top: 5px;
     color: #696969;
     cursor: pointer;
+}
+
+.cert-link {
+    color: #696969; /* Same gray as "Read more..." */
 }
 
 .project-description {
