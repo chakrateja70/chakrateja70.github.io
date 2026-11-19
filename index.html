@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chakra Teja</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal">
+        <pre class="ascii-art">
+
+     ____ _           _                _____     _
+    / ___| |__   __ _| | ___ __ __ _  |_   _|__ (_) __ _
+   | |   | '_ \ / _` | |/ / '__/ _` |   | |/ _ \| |/ _` |
+   | |___| | | | (_| |   <| | | (_| |   | |  __/| | (_| |
+    \____|_| |_|\__,_|_|\_\_|  \__,_|   |_|\___|/ |\__,_|
+                                              |__/
+
+        </pre>
+        <div class="content">
+            <section id="home">
+                <p class="prompt">$ cat welcome.txt</p>
+                <p>Hello, I'm Chakra Teja and this is my personal webpage.
+
+                    I'm an Agentic AI Engineer based in Hyderabad, India, with experience building Agentic AI systems, RAG pipelines and conversational AI. If you're interested in connecting or collaborating, don't hesitate to reach out!</p>
+            </section>
+
+            <section id="social">
+                <p class="prompt">$ ls social_links</p>
+                <ul>
+                    <li><a href="https://github.com/chakrateja70" target="_blank">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/chakrateja5484/" target="_blank">LinkedIn</a></li>
+                    <li><a href="mailto:tejapolamarasetty2004@gmail.com">tejapolamarasetty2004@gmail.com</a></li>
+                    <li><a href="data/ChakraTejaCV.pdf" target="_blank">cv.pdf</a></li>
+                </ul>
+            </section>
+
+            <section id="experience">
+                <p class="prompt">$ cat work_experience.log</p>
+                <p class="jobs"><b>[AI Engineer]</b>
+Company: Lomaa IT Solutions
+Period: July 2025 - October 2026
+Description:
+- Led end-to-end AI project delivery, from gathering business requirements and translating them into technical specifications to architecting, developing, testing and deploying production-ready Generative AI and Agentic AI solutions.
+- Designed and deployed a WhatsApp AI chatbot handling 2,000+ daily queries, providing text assistance, audio support, video guidance and automated form-filling, reducing manual inquiry resolution by 45%.
+- Architected scalable AI backends using FastAPI, MongoDB, MySQL and Pinecone, implementing RAG pipelines, tool-calling, AI orchestration and Prompt Engineering to improve system performance and knowledge-retrieval accuracy.
+- Fine-tuned and evaluated LLMs including LLaMA and Gemma using LoRA, applying model evaluation, hyperparameter tuning and optimization techniques to improve inference speed by 25% and reduce model size by 32%.
+- Established engineering quality and performance practices through Pytest/unittest automation, Ruff and SonarQube code-quality checks, cProfile/line profiler performance analysis and Locust/k6 load testing; participated in code reviews and debugging to improve reliability.
+- Implemented production observability and AI evaluation using Langfuse, OpenTelemetry, and RAGAS to monitor latency, traces, token usage, and retrieval quality, while collaborating with cross-functional teams to deliver reliable and maintainable AI solutions.
+
+<i>Tools & Technologies: Python, FastAPI, LangChain, LangGraph, MongoDB, MySQL, Pinecone, LoRA, Langfuse, OpenTelemetry, RAGAS, Pytest</i>
+
+<b>[Junior Data Engineer]</b>
+Company: Nabla Infotech Pvt. Ltd.
+Period: April 2025 - July 2025
+Description:
+- Integrated FastAPI, Retrieval-Augmented Generation (RAG), and Pinecone vector databases into production applications to improve document retrieval and processing.
+- Wrote and maintained unit test cases using Pytest to validate backend APIs and AI workflows, improving code reliability and identifying issues during development.
+- Developed backend APIs for conversational AI workflows and collaborated closely with the engineering team to improve agent performance and response accuracy.
+
+<i>Tools & Technologies: Python, FastAPI, RAG, Pinecone, Pytest</i>
+</p>
+            </section>
+
+            <section id="certifications">
+                <p class="prompt">$ cat certifications.txt</p>
+                <p class="jobs"><b>[IBM Generative AI Engineering Professional Certificate]</b>
+Issuer: IBM (via Coursera)
+Completed: July 2026
+16 courses covering Generative AI, LLMs, NLP, prompt engineering, fine-tuning transformers, and building RAG and AI agent applications with PyTorch, Hugging Face, LangChain and Flask.
+<a href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/EUHE9HQPGX64" target="_blank">View certificate</a>
+
+<b>[Claude Code in Action]</b>
+Issuer: Anthropic
+Running Claude Code for long, less supervised, team-wide workflows: plan mode and compaction, CLAUDE.md and skills, permission modes, hooks, scheduled and headless runs, PR code review, and verifying unattended runs.
+<a href="https://verify.skilljar.com/c/jn9o4aweiccn" target="_blank">View certificate</a>
+</p>
+            </section>
+
+            <section id="achievements">
+                <p class="prompt">$ cat achievements.txt</p>
+                <p class="jobs"><b>[1st Place - Wexa AI Hackathon]</b>
+Secured 1st place in a 3-day hackathon by Wexa AI, building 'Pulse', an AI project manager that eliminates manual status-chasing by auto-calling team members for updates.
+</p>
+            </section>
+
+            <section id="projects">
+                <p class="prompt">$ ls projects/</p>
+                <ul>
+                    <li>
+                        <a href="https://github.com/chakrateja70/Code-Docuement-Generator-AgenticAI" target="_blank">ai_code_documentation.py</a>
+                        <a href="#" class="read-more">Read more...</a>
+                        <div class="project-description" style="display: none;">
+                            <p>An agentic AI documentation generator. Given a Git repo URL or a Zip upload, it analyzes the codebase and produces a structured, 14-section project documentation file (Markdown + PDF) without a developer writing it by hand.
+
+The system is a multi-agent pipeline orchestrated with LangGraph, not a single-shot prompt. An ingestion agent clones the source and builds the file tree, a code-understanding agent produces per-file summaries and detects database, ML and API signals, and a planner decides which sections apply and fans out drafting in parallel. Specialized writer agents draft each section from a retrieved code index rather than raw code, so repositories larger than one context window are handled.
+
+Every draft is checked by a verifier agent against real code facts, and failures loop back to the same writer within a retry budget. This guards against hallucinated install commands, fake API routes and invented database tables. A summary agent writes the Abstract and Table of Contents last, from verified content only.
+
+Exposed through a FastAPI service with background job queueing, status polling and PDF/Markdown download. LLM access goes through a provider registry supporting OpenAI, Groq and Gemini, and offline test suites run the full graph with the LLM stubbed.
+
+<i>Tools & Technologies: Python, LangGraph, FastAPI, OpenAI, Groq, Gemini</i></p>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="https://github.com/chakrateja70/Agentic-RAG-Chatbot" target="_blank">agentic_rag_chatbot.py</a>
+                        <a href="#" class="read-more">Read more...</a>
+                        <div class="project-description" style="display: none;">
+                            <p>A multi-agent Retrieval-Augmented Generation chatbot where agents communicate through the Model Context Protocol (MCP), answering questions over multiple document formats (PDF, DOCX, PPTX, CSV, TXT, Markdown).
+
+Four agents split the work: an IngestionAgent parses and chunks documents, a RetrievalAgent generates embeddings and runs semantic search, an LLMResponseAgent builds the final prompt from the retrieved context, and a CoordinatorAgent orchestrates the flow. All agents exchange structured, traceable MCP messages (sender, receiver, type, trace_id, payload) through a message broker, with error propagation and recovery across agents.
+
+Supports four query types: answering with source citations, generating comprehension questions, summarizing documents, and evaluating user answers. Embeddings come from Google, vectors are stored in Pinecone, and responses are generated by Llama through Groq.
+
+Exposed through a FastAPI backend (upload, query, status and health endpoints) with a Streamlit chat UI that includes an interactive architecture viewer.
+
+<i>Tools & Technologies: Python, FastAPI, Streamlit, LangChain, Pinecone, Groq (Llama), Google Embeddings, MCP</i></p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/chakrateja70/ai-voice-agent" target="_blank">ai_voice_agent.py</a>
+                        <a href="#" class="read-more">Read more...</a>
+                        <div class="project-description" style="display: none;">
+                            <p>A voice-calling system that places phone calls automatically and holds a natural, back-and-forth conversation with the person on the line. It uses Twilio for telephony (outgoing calls, speech-to-text and text-to-speech) and Google Gemini for context-aware conversational responses.
+
+A client requests a call through an API endpoint, the backend places it with Twilio and registers webhooks for call events, and the Gemini-powered agent responds to the caller turn by turn. Call details and the full conversation transcript are saved to a MySQL database through async SQLAlchemy, and the call status is updated when the conversation ends.
+
+Suited to customer feedback collection, automated interviews, appointment reminders, surveys and basic phone support. Built on FastAPI, with ngrok used to expose the local server for Twilio webhooks during development, and file and console logging for monitoring.
+
+<i>Tools & Technologies: Python, FastAPI, Twilio, Google Gemini, MySQL, SQLAlchemy (Async), ngrok</i></p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/chakrateja70/AI-Finance-Advisor" target="_blank">finance_ai_advisor.js</a>
+                        <a href="#" class="read-more">Read more...</a>
+                        <div class="project-description" style="display: none;">
+                            <p>FinanceAI is a full-stack, AI-powered personal finance platform that helps users track expenses, analyze spending behavior and get intelligent financial guidance from LLM-driven insights.
+
+A dashboard shows total income, expenses, net balance and a category-wise spending breakdown, with monthly filtering and percentage-based analytics. Users manage expenses through full CRUD with categorization and strictly user-scoped data.
+
+Two AI features sit on top of the traditional backend. AI Expense Detection turns natural language such as "Spent 500 on food and 200 on Uber" into structured expenses with amount, category and description. The AI Financial Advisor is a chat assistant that answers questions like "Where can I save money?" using the user's own data as context, powered by Groq, with optional Pinecone semantic memory.
+
+Authentication combines JWT for fast verification with database-backed sessions so access can be revoked, and middleware enforces per-user isolation on every query. Built with a Node.js REST API on PostgreSQL and a React frontend styled with Tailwind.
+
+<i>Tools & Technologies: Node.js, React, PostgreSQL, Tailwind CSS, JWT, Groq, Pinecone</i></p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/chakrateja70" target="_blank">medmcqa_finetuning.ipynb</a>
+                        <a href="#" class="read-more">Read more...</a>
+                        <div class="project-description" style="display: none;">
+                            <p>An end-to-end pipeline for fine-tuning a lightweight causal language model (Qwen3-0.6B) on MedMCQA, a dataset of over 194k multiple-choice medical entrance exam questions, using the Hugging Face ecosystem on a single Tesla T4 GPU.
+
+Questions and answer options are formatted into text prompts and tokenized, using subsampled splits (2,000 train, 500 validation) to keep training fast. Supervised fine-tuning runs with the Hugging Face Trainer over 2 epochs, tuned for memory stability on limited hardware with a small batch size, gradient accumulation, gradient checkpointing, bf16 precision and expandable CUDA memory segments to avoid out-of-memory fragmentation.
+
+On the validation split, the base model scored 22.20% accuracy while the fine-tuned model reached 68.60%. The test split was unusable for automated evaluation because it ships without ground-truth labels. The trained model and tokenizer were saved, archived and pushed to the Hugging Face Hub.
+
+<i>Tools & Technologies: Python, PyTorch, Hugging Face Transformers, Datasets, Trainer, Qwen3, bf16, Tesla T4</i></p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html>
